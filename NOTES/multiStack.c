@@ -80,3 +80,13 @@ int push(struct stack *stackPtr, int value){
     (stackPtr->top)++;
     return 1;
 }
+
+int pop(struct stack *stackPtr){
+    if(empty(stackPtr)){
+        return EMPTY;
+    }
+    int retval;
+    retval = stackPtr->items[stackPtr->top];
+    (stackPtr->top)--;
+    return retval;
+}
