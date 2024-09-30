@@ -68,5 +68,15 @@ int full(struct stack *stackPtr){
 }
 
 int empty(struct stack *stackPtr){
-    return(stackPtr->top == -1);
+    return(stackPtr->top == -1)
+}
+
+int push(struct stack *stackPtr, int value){
+    /*must check if the stack is full*/
+    if(full(stackPtr)){
+        return 0;
+    }
+    stackPtr->items[stackPtr->top+1] = value;
+    (stackPtr->top)++;
+    return 1;
 }
