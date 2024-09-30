@@ -49,10 +49,45 @@ int multiply(int first, int second){
     effectively multiplying the values
 */
 
+int lucas(int n){
+    if(n==1){
+        return 1;
+    }else if(n==2){
+        return 3;
+    }else{
+        return lucas(n-1)+lucas(n-2);
+    }
+}
+/*  Unwinding the recursive calls
+    Keeps adding the immediate past two terms
+*/
+
+void decToBin(int n){
+    if(n<2){
+        printf("%d", n);
+    } else {
+        decToBin(n/2);
+        printf("%d", n%2);
+    }
+}
+/*  Unwinding the recursive calls
+    Divides n by 2 and prints the remainder until n is < than 2, then prints n (1)
+*/
+
+int fastExp(int b, int e){
+    if(e == 0){
+        return ;
+    }
+    if(e == 1){
+        return b;
+    }
+    if(e%2 == 0){
+        return fastExp(b*b, e/2);
+    } else {
+        return fastExp(b*b, e/2)*b;
+    }
+} 
+
 /*TODO
-fast exponent
-decimal to binary
 tower of hanoi
-division
-negatives with multiplication
 */
