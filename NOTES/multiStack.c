@@ -58,3 +58,15 @@ int main(){
         }
     }
 }
+
+void init(struct stack *stackPtr){
+    stackPtr->top = -1;
+}
+
+int full(struct stack *stackPtr){
+    return(stackPtr->top == SIZE - 1);
+}
+
+int empty(struct stack *stackPtr){
+    return(stackPtr->top == -1);
+}
