@@ -7,6 +7,21 @@ int factorial(int n){
     return n * factorial(n-1); /*recursive case*/
 }
 
+/*  Unwinding the recursive calls
+    factorial(2) was waiting for the result of factorial(1) which is 1, 
+    so now it computes:
+    2 * 1 = 2
+    factorial(3) was waiting for the result of factorial(2) which is 2,
+    so now it computes:
+    3 * 2 = 6
+    factorial(4) was waiting for the result of factorial(3) which is 6,
+    so now it computes:
+    4 * 6 = 24
+    factorial(5) was waiting for the result of factorial(4) which is 24,
+    so now it computes:
+    5 * 24 = 120
+*/
+
 void reverseString(char string[], int length){
     if(length == 0){
         return; /*base case*/
