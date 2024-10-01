@@ -6,12 +6,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h> 
-
 #define SIZE 100
 #define EMPTY -1
 
 struct stack {
-
     char items[SIZE];
     int top;
 };
@@ -25,9 +23,8 @@ int peek(struct stack* stackPtr);
 void print_stack(struct stack* stackPtr);
 
 
-//functions you have to complete:
-int checkBalance(char exp[]);
 
+int checkBalance(char exp[]);
 int priority(char ch);
 int isOperator(char ch);
 char *infixToPostfix(char infix[]);
@@ -37,7 +34,8 @@ int checkBalance(char exp[]){
     int valid = 1;
     struct stack mine;
     initialize(&mine);
-
+    /*if a (, {, or[, is found, push it to the stack, then pop and determine if there is
+    a completing bracket/parantheses. print appropriate message*/
     printf("Checking balance...\n");
     for(int i = 0; exp[i]!='\0'; i++){
         if(exp[i] == '(' || exp[i] == '{' || exp[i] == '['){
@@ -79,7 +77,7 @@ int main(void) {
     char exp[SIZE], c;
 
     int valid;
-
+    /*takes in expression, checks balance, prints the postfix if its valid*/
      printf("Enter Expression: ");
      scanf("%[^\n]s",exp);
      printf("Your input expression: %s\n", exp);
@@ -96,7 +94,7 @@ int main(void) {
 }
 
 
-
+/*Prints the current stack*/
 void print_stack(struct stack* stackPtr) {
      for(int i=0; i<=stackPtr->top; i++)
         printf("%c-->", stackPtr->items[i]);
@@ -104,7 +102,7 @@ void print_stack(struct stack* stackPtr) {
      printf("\n");
 }
 
-
+/*Initializes the stack*/
 void initialize(struct stack* stackPtr) {
      stackPtr->top = -1;
 }
