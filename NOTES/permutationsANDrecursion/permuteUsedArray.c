@@ -2,7 +2,7 @@
 iteration of the permutation process*/
 
 #include <stdio.h>
-#define SIZE 5
+#define SIZE 3
 
 void printPermuteArray(int arr[], int n){
     for(int i = 0; i < n; i++){
@@ -29,7 +29,6 @@ int main(){
     int perm[SIZE] = {0};
     int used[SIZE] = {0};
     mypermute(perm, used, 0, SIZE);
-    printf(">>>START<<<\n");
     return 0;
 }
 
