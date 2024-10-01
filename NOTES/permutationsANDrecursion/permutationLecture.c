@@ -18,3 +18,21 @@ int main(){
 void ListPermutations(char str[]){
     RecursivePermute(str, 0);
 }
+
+void RecursivePermute(char str[], int k){
+    int j;
+    /*Base Case*/
+    if(k == strlen(str)){
+        printf("%s\n", str);
+    } else {
+        for(j = k; j < strlen(str); j++){
+            /*Place char stored in index j in location k*/
+            ExchangeCharacters(str, k, j);
+            /*Print out all permutations with that character*/
+            RecursivePermute(str, k+1);
+            /*Put the original character back in its place*/
+            ExchangeCharacters(str, j, k);
+        }
+    }
+}
+
