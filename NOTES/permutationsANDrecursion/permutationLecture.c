@@ -36,3 +36,9 @@ void RecursivePermute(char str[], int k){
     }
 }
 
+void ExchangeCharacters(char str[], int i, int j){
+    char temp = str[i];
+    str[i] = str[j];
+    str[j] = temp;
+}
+
