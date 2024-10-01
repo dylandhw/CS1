@@ -67,8 +67,9 @@ int full(struct stack *stackPtr){
     return(stackPtr->top == SIZE - 1);
 }
 
+
 int empty(struct stack *stackPtr){
-    return(stackPtr->top == -1)
+    return(stackPtr->top == -1);
 }
 
 int push(struct stack *stackPtr, int value){
@@ -89,4 +90,19 @@ int pop(struct stack *stackPtr){
     retval = stackPtr->items[stackPtr->top];
     (stackPtr->top)--;
     return retval;
+}
+
+int top(struct stack *stackPtr){
+    if(empty(stackPtr)){
+        return EMPTY;
+    } else {
+        return stackPtr->items[stackPtr->top];
+    }
+}
+
+void display(struct stack *stackPtr){
+    printf("<<PRINTING CURRENT STACK>>\n");
+    for(int i = 0; i < stackPtr->top; i++){
+        printf("%d ", stackPtr->items[i]);
+    }
 }
