@@ -2,7 +2,7 @@
 
 void ListPermutations(char str[]);
 void RecursivePermute(char strp[], int k);
-voide ExchangeCharacters(char str[], int i, int k);
+void ExchangeCharacters(char str[], int i, int k);
 
 int main(){
     char word[20];
