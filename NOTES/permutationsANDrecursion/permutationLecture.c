@@ -11,4 +11,10 @@ int main(){
     /*Print out permutations*/
     printf("<<<Permutations>>>\n");
     ListPermutations(word);
+    system("<<<PAUSE>>>\n");
+    return 0;
+}
+
+void ListPermutations(char str[]){
+    RecursivePermute(str, 0);
 }
