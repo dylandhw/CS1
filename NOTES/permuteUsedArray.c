@@ -11,3 +11,16 @@ void printPermuteArray(int arr[], int n){
     printf("\n");
 }
 
+void mypermute(int arr[], int used[], int k, int n){
+    if(k == n){
+        printPermuteArray(arr, n);
+    }
+    for(int i = 0; i < n; i++){
+            if(!used[i]){
+                used[i] = 1;
+                arr[k] = i;
+                mypermute(arr, used, k+1, n);
+                used[i] = 0;
+            }
+        }
+}
