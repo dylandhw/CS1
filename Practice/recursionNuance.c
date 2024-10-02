@@ -41,8 +41,11 @@ int foo5(int n){
     }
 }
 
-void foo6(){
-    
+void foo6(int low, int high){
+    if(!(low > high)){
+        printf("%d ", low);
+        foo6(low+1, hight);
+    }
 }
 
 int main(){
