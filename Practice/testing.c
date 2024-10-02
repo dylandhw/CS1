@@ -1,12 +1,13 @@
-// playing with stacks 
 #include <stdio.h>
+#include <stdlib.h>
 #define size 6
 int stack[size];
 int top;
 
+
 void PUSH(int ele){
-    if (top >= size-1){ // check if the stack is full by comparing the top to the size
-        printf("FULL!!!"); // size-1 because indices start at 0
+    if(top >= size){
+        printf("??EMPTY??\n");
         return;
     } else {
         stack[++top] = ele;
@@ -15,17 +16,19 @@ void PUSH(int ele){
 
 int POP(){
     if(top < 0){
-        printf("EMPTY!!!");
-        return 0;
+        return -999;
     } else {
-        return stack[--top];
+        return stack[top--];
     }
 }
 
 void display(){
-    printf("Current Stack:\n");
-    for(int i = 0; i < top; i++){
-        printf("%d ", stack[i]);
+    if(top < 0){
+        printf("!!EMPTY!!\n");
+    } else {
+        for(int i = 0; i < top; i++){
+            printf("%d ", stack[i]);
+        }
     }
 }
 
@@ -36,7 +39,11 @@ int main(void)
     top = -1;
     while(1)
     {
-        printf("\npress e for Push, press p for POP, press d for displaying, press x for Exit\nEnter your choice: ");
+        printf("<<E = PUSH>>");
+        printf("<<P = POP>>");
+        printf("<<D = DISPLAY>>");
+        printf("<<X = PUSH>>");
+
         scanf("%c",&ch);
         if(ch=='x')
         {
@@ -45,7 +52,7 @@ int main(void)
         }
         else if (ch=='e')
         {
-            printf("Enter an element to PUSH in the stack: ");
+            printf("<<ELEMENT>>");
             scanf("%d",&ele);
             PUSH(ele);
         }
@@ -54,7 +61,7 @@ int main(void)
             ele = POP();
             if(ele!=0 )
             {
-                printf(" ITEM POPED :%d ",ele);
+                printf("<<ITEM POPED :%d >>",ele);
             }
         }
         else if(ch=='d')
