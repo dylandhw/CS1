@@ -59,4 +59,4 @@
         printf("IS A PALINDROME.");
     
         return 0;
-    }
+}
