@@ -1,0 +1,17 @@
+Queue practice - undersanding % in queue context
+
+Stack practice - postfix & infix
+
+Recursion
+    How to think recursively - reference textbook
+
+    Tower of Hanoi & Flood Filling
+    Recursion with queue and Stack
+    Drawing trees & tracing recursive code (unwinding)
+    
+    Queues/stacks/linked lists and their relationships w/ recursion
+
+End of wednesday lecture (alg analysis, runtime, slmp, binary tree)
+
+Individual
+    Modulo and integer division rules
